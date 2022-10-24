@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-class Order {
-    var items = [MenuItem]()
+class Order: ObservableObject {
+    // The variable needs to perform binding on multiple structs
+    @Published var items = [MenuItem]()
 
     var total: Int {
         if items.count > 0 {
@@ -20,6 +21,8 @@ class Order {
     }
 
     func add(item: MenuItem) {
+        guard !items.contains(item) else { return }
+        
         items.append(item)
     }
 
