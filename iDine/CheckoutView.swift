@@ -66,6 +66,7 @@ struct CheckoutView: View {
                 }
             } header: {
                 Text("TOTAL: \(totalPrice)")
+                    .font(.largeTitle)
             }
 
 
